@@ -58,8 +58,8 @@ app.get("/menu", (req,res) => {
     res.render("menu.ejs", {menu:RESTAURANT.menu})
 })
 
-app.get("menu/:category", (req,res) =>{
-    const menuItem = menu.filter((items) => {
+app.get("/menu/:category", (req,res) =>{
+    const menuItem = RESTAURANT.menu.filter((items) => {
       return  items.category == req.params.category
     }) 
     res.render("category.ejs", {menuItem})
